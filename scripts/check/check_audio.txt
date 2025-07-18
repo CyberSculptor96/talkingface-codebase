@@ -1,0 +1,14 @@
+>>> import torch
+>>> path = '/data/TalkVid-test-100/short_clip_aud_embeds/videovideoTr6MMsoWAog-scene1_scene1.pt'
+>>> data = torch.load(path)
+>>> data.keys()
+dict_keys(['global_embeds'])
+>>> d = data['global_embeds']
+>>> d.shape
+torch.Size([252, 1, 768])
+>>> torch.unique(d)
+tensor([-2.4025, -2.2695, -2.2171,  ...,  2.6057,  2.6132,  2.7902],
+       device='cuda:0')
+>>> 252*24/50        # 结果接近121
+120.96
+>>> 
